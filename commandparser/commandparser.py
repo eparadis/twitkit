@@ -4,7 +4,10 @@ class CommandParser():
     self.command = command
 
   def canParse(self, text):
-    return text.split()[0] is self.command
+    return text.split()[0] == self.command
 
-  def parse(self, text):
-    return text.split() #TODO return command object or something
+  def _parse(self, text):
+    return text.split()
+
+  def firstArg(self, text):
+    return text.split()[1]

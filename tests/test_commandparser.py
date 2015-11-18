@@ -14,6 +14,7 @@ class CommandParserTests( unittest.TestCase):
     result = self.testobj.canParse('foo')
     self.assertTrue(result)
 
-  def test_parse(self):
-    result = self.testobj.parse('foo bar baz')
+  def test_firstArgument(self):
+    result = self.testobj.firstArg('foo bar baz')
+    self.assertEqual(result, 'bar')
 
