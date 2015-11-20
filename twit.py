@@ -20,8 +20,9 @@ import re
 import socket
 import time
 
-CHAT_MSG=re.compile(r"^:\w+!\w+@\w+\.tmi\.twitch\.tv PRIVMSG #\w+ :")
-RATE = (20.0/30)
+CHAT_MSG = re.compile(r"^:\w+!\w+@\w+\.tmi\.twitch\.tv PRIVMSG #\w+ :")
+RATE = (20.0 / 30)
+
 
 class TwitchBot():
     """A SingleServerIRCBot that does Twitch."""
@@ -44,12 +45,14 @@ class TwitchBot():
             if response == "PING :tmi.twitch.tv\r\n":
                 self._sock.send("PONG :tmi.twitch.tv\r\n".encode("utf-8"))
             else:
-                username = re.search(r"\w+", response).group(0) # return the entire match
+                username = re.search(r"\w+", response).group(0)  # return the entire match
                 message = CHAT_MSG.sub("", response)
                 print(username + ": " + message)
             time.sleep(1 / RATE)
 
+
 CONFIG_FILE = "twit.cfg"
+
 
 def main():
     import sys
@@ -68,6 +71,7 @@ def main():
 
     bot = TwitchBot(channel, nick, auth)
     bot.run()
+
 
 if __name__ == "__main__":
     main()

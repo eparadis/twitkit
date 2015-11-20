@@ -1,3 +1,4 @@
 twit.cfg
 __pycache__
 *.swp
+.idea
