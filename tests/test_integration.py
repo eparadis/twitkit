@@ -1,6 +1,7 @@
 import unittest
-from votemanager import votemanager
+
 from commandparser import commandparser
+from votemanager import votemanager
 
 
 class IntegrationTests(unittest.TestCase):

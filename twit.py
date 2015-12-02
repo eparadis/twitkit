@@ -57,8 +57,8 @@ CONFIG_FILE = "twit.cfg"
 def main():
     import sys
     import os.path
-    import ConfigParser
-    config = ConfigParser.ConfigParser()
+    import configparser
+    config = configparser.ConfigParser.ConfigParser()
 
     config.read(CONFIG_FILE)
     if not os.path.isfile(CONFIG_FILE):
